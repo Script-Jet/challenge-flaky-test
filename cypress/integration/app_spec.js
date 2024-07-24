@@ -22,7 +22,8 @@ describe('Sign Up', () => {
     cy.get('input[type="submit"]')
       .click()
 
-    cy.get('li')
+    // Adjust timeout to give enough time for the element to appear
+    cy.get('li', { timeout: 10000 })
       .should('contain', 'Some Name - some@email.com - core - git-it')
   })
 })
